@@ -109,8 +109,8 @@ a:active {
 .modal {
   background: white;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
-  max-width: 95%;
-  width: 500px;
+  max-width: 95%; /* for mobile width*/
+  width: 500px; /* Desktop */
   animation: modalopen 1s;
 }
 
