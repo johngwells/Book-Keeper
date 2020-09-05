@@ -25,7 +25,7 @@ h1 {
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
-  width: 27.5rem;
+  width: 275px;
   margin: 2rem auto 1rem;
   user-select: none;
 }
@@ -82,10 +82,109 @@ a:active {
 }
 
 .name img {
-  height: 2rem;
-  width: 2rem;
+  height: 20px;
+  width: 20px;
   vertical-align: sub;
   margin-right: .5rem;
+}
+
+/* Modal */
+.modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  /* tlrb 0 takes up the whole page*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  float: right;
+  color: white;
+  font-size: 2.4rem;
+  position: relative;
+  top: 1.3rem;
+  right: 1.3rem;
+  cursor: pointer;
+}
+
+.modal-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 2rem;
+  background: whitesmoke;
+}
+
+/* Form */
+.form-group {
+  height: 55px;
+}
+
+.form-input {
+  width: 97%;
+  padding: .5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+
+.form-label {
+  color: var(--primary-color);
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:focus {
+  outline: none;
 }
 
 /* Media Query: Large Smartphone (Vertical) */
