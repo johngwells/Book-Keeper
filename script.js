@@ -40,6 +40,9 @@ function validate(nameValue, urlValue) {
 
 // Build Bookmarks DOM
 function buildBoomarks() {
+  // Remove all bookmark elements - Clears when deleting elements before repopulating
+  bookmarksContainer.textContent = '';
+
   bookmarks.forEach(bookmark => {
     const { name, url } = bookmark;
     // item
@@ -84,6 +87,19 @@ function fetchBookmarks() {
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
   buildBoomarks();
+}
+
+// Delete Bookmark
+function deleteBookmark(url) {
+  console.log('delete', url);
+  bookmarks.forEach((bookmark, i) => {
+    if (bookmark.url === url) {
+      bookmarks.splice(i, 1);
+    }
+  });
+  // Update bookmarks array in localstorage, then repopulate DOM
+  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  fetchBookmarks();
 }
 
 // Handle Data from form
